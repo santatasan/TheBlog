@@ -1,0 +1,41 @@
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.blog-post-meta {
+    color: #727272;
+}
+
+.parrafo{
+    white-space: pre-wrap;
+}
+
+a{
+    cursor: pointer;
+    position: relative;
+    font-size: 110%;
+    padding-bottom: 3px;
+}
+
+a:hover{
+    color: white !important;
+    text-shadow: 0 0 6px black;
+}
+
+a::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    border-bottom: 1px solid grey;
+    -webkit-transition: width .4s;
+    transition: width .4s;
+}
+
+a:hover::after {
+    width: 100%;
+    left: 0;
+}
