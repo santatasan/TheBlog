@@ -1,0 +1,25 @@
+/* SCROLL TO TOP
+----------------------------------------------------*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css');
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+  z-index: 1000!important;
+}
+
+.btn-check:focus + .btn, .btn:focus {
+	  box-shadow: 0 0 0  !important;
+}
+
+i{
+  font-size: 2em;
+  color: black;
+}
+.show-scrollTop {
+  opacity: 1;
+  transition: all .1s ease-in-out;
+}
