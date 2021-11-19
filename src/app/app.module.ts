@@ -24,3 +24,4 @@ import { FormularioComponent } from './formulario/formulario.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

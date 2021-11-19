@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PostsService } from '../posts.service';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -11,7 +13,7 @@ export class FormularioComponent implements OnInit {
 
   formulario: FormGroup;
 
-  constructor(private postsService: PostsService) {
+  constructor(private postsService: PostsService, private router: Router) {
 
     this.formulario = new FormGroup({
       titulo: new FormControl('', [Validators.required]),
@@ -27,8 +29,20 @@ export class FormularioComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.formulario.value);
+    this.formulario.value.fecha = new Date(this.formulario.value.fecha);
+    this.formulario.value.categoria = this.formulario.value.categoria.toLowerCase();
+    this.postsService.agregar(this.formulario.value);
     this.formulario.reset();
+    Swal.fire({
+      title: 'Post subido',
+      text: 'El post ya está esperando a que lo lean',
+      icon: 'success',
+      showConfirmButton: false,
+      timer: 3500,
+    })
+    setTimeout(() => {
+      this.router.navigate(['/blog']);
+    }, 3700);
   }
 
 }

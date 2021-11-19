@@ -8,6 +8,10 @@
 
 nav{
     border-radius: .25rem ;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
 }
 
 ul{

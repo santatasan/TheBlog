@@ -27,6 +27,9 @@ export class BlogComponent implements OnInit {
     this.arrPosts = this.postsService.getByCategory($event.target.innerText.toLowerCase());
     const inputBusqueda = <HTMLInputElement>document.getElementById('busqueda');
     inputBusqueda.value = '';
+    setTimeout(() => {
+      scrollTo(0, 0);
+    }, 1);
   }
 
   onInput($event: any) {

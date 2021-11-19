@@ -32,7 +32,7 @@ export class PostsService {
   }
 
   getByName(name: string): Post[] {
-    return this.arrPosts.filter(post => post.titulo.includes(name));
+    return this.arrPosts.filter(post => post.titulo.toLowerCase().includes(name.toLowerCase()));
   }
 
   getCategories(): string[] {

@@ -12,3 +12,8 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
     color: tomato;
     text-shadow: 0 0 4px tomato;
 }
+
+.btn:hover{
+    color: black;
+    background-color: grey;
+}
