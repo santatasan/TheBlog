@@ -19,12 +19,18 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.arrPosts = this.postsService.getAll().reverse();
+    this.arrPosts = this.postsService.getAll();
     this.arrCategories = this.postsService.getCategories().sort();
   }
 
   onClick($event: any) {
     this.arrPosts = this.postsService.getByCategory($event.target.innerText.toLowerCase());
+    const inputBusqueda = <HTMLInputElement>document.getElementById('busqueda');
+    inputBusqueda.value = '';
+  }
+
+  onInput($event: any) {
+    this.arrPosts = this.postsService.getByName($event.target.value);
   }
 
 }

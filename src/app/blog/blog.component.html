@@ -7,7 +7,6 @@
 
 <div class="row g-5">
     <div class="col-md-8">
-
         <article class="blog-post" *ngFor="let post of arrPosts">
             <h2 class="blog-post-title fst-italic">{{post.titulo}}</h2>
             <p class="blog-post-meta">{{post.categoria | capitalize}}</p>
@@ -18,9 +17,13 @@
         </article>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4 mb-2">
         <div class="position-sticky" style="top: 2rem;">
             <div class="p-4 bg-light rounded">
+                <form>
+                    <input id="busqueda" class="form-control mb-4" type="search" placeholder="Buscar por nombre"
+                        aria-label="Search" (input)="onInput($event)">
+                </form>
                 <h3 class="fst-italic">Categorías</h3>
                 <ol class="list-unstyled mb-0">
                     <li class="d-flex"><a (click)="onClick($event)">Todas las categorías</a></li>

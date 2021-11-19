@@ -1,1 +1,28 @@
-<p>formulario works!</p>
+<form [formGroup]="formulario" class="d-flex flex-column align-items-center" (ngSubmit)="onSubmit()">
+    <div class="mb-3 col-12 col-md-8 col-12 col-md-8">
+        <label class="form-label">Título</label>
+        <input type="text" class="form-control" formControlName="titulo">
+    </div>
+    <div class="mb-3 col-12 col-md-8">
+        <label class="form-label">Autor</label>
+        <input type="text" class="form-control" formControlName="autor">
+    </div>
+    <div class="mb-3 col-12 col-md-8">
+        <label class="form-label">Categoría</label>
+        <input type="text" class="form-control" formControlName="categoria">
+    </div>
+    <div class="mb-3 col-12 col-md-8">
+        <label class="form-label">Imagen</label>
+        <input type="text" class="form-control" formControlName="imagen">
+    </div>
+    <div class="mb-3 col-12 col-md-8">
+        <label class="form-label">Texto</label>
+        <textarea class="form-control" formControlName="texto"></textarea>
+    </div>
+    <div class="mb-3 col-12 col-md-8">
+        <label class="form-label">Fecha</label>
+        <input type="date" class="form-control" formControlName="fecha">
+    </div>
+    <input type="submit" class="btn btn-dark mb-3 col-3" value="Enviar" [disabled]="!formulario.valid">
+    <p class="error mb-3" *ngIf="!formulario.valid && formulario.touched">Todos los campos son requeridos</p>
+</form>

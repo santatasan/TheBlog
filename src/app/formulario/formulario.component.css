@@ -1,0 +1,14 @@
+input.ng-valid.ng-touched, textarea.ng-valid.ng-touched{
+    border: 1px solid lightgreen;
+    box-shadow: 0 0 4px lightgreen;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+    border: 1px solid tomato;
+    box-shadow: 0 0 8px tomato;
+}
+
+.error {
+    color: tomato;
+    text-shadow: 0 0 4px tomato;
+}

@@ -15,7 +15,7 @@ export class PostsService {
   }
 
   agregar(post: Post) {
-    this.arrPosts.push(post);
+    this.arrPosts.unshift(post);
     localStorage.setItem('posts', JSON.stringify(this.arrPosts));
   }
 
@@ -25,7 +25,7 @@ export class PostsService {
 
   getByCategory(category: string): Post[] {
     if (category === 'todas las categorías') {
-      return this.getAll()
+      return this.getAll();
     } else {
       return this.arrPosts.filter(post => post.categoria === category);
     }

@@ -1,5 +1,5 @@
 <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+    <nav id="top" class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
         <div class="container-fluid align-items-center">
             <a class="navbar-brand" [routerLink]="['/blog']" routerLinkActive="active"><img
                     src="https://limpiezademalaga.es/wp-content/uploads/2020/06/GettyImages-1178216359-compressed-1024x614.jpg"
@@ -10,7 +10,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mb-2 mb-lg-0 justify-content-around fs-3">
                     <li class="nav-item">
                         <a class="nav-link" [routerLink]="['/blog']" routerLinkActive="active">Blogs</a>
                     </li>
@@ -18,17 +18,14 @@
                         <a class="nav-link" [routerLink]="['/new']" routerLinkActive="active">Nuevo blog</a>
                     </li>
                 </ul>
-                <form>
-                    <input class="form-control" type="search" placeholder="Buscar blogs por nombre" aria-label="Search">
-                </form>
             </div>
         </div>
     </nav>
     <router-outlet></router-outlet>
-    <footer class="blog-footer">
-        <p>Blog created by Iván Santa</p>
+    <footer class="blog-footer bg-dark">
+        <p class="text-white">- Blog created by Iván Santa -</p>
         <p>
-            <a href="#">Back to top</a>
+            <a>Back to top</a>
         </p>
     </footer>
 </div>
